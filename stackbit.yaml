@@ -1,0 +1,833 @@
+stackbitVersion: ~0.3.0
+ssgName: hexo
+nodeVersion: '12'
+publishDir: public
+dataDir: ''
+pagesDir: ''
+models:
+  '404':
+    type: page
+    label: '404'
+    folder: source/404
+    match: '*'
+    fields:
+      - type: number
+        name: title
+        label: Title
+        subtype: int
+      - type: datetime
+        name: date
+        label: Date
+      - type: string
+        name: type
+        label: Type
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: description
+        label: Description
+  scaffold:
+    type: page
+    label: Scaffold
+    folder: scaffolds
+    match: '*'
+    exclude:
+      - post.md
+    fields: []
+  scaffold_1:
+    type: page
+    label: Scaffold 1
+    folder: scaffolds
+    match:
+      - post.md
+    fields:
+      - type: string
+        name: author
+        label: Author
+      - type: image
+        name: img
+        label: Img
+      - type: boolean
+        name: top
+        label: Top
+      - type: boolean
+        name: cover
+        label: Cover
+      - type: image
+        name: coverImg
+        label: Cover Img
+      - type: boolean
+        name: toc
+        label: Toc
+      - type: boolean
+        name: mathjax
+        label: Mathjax
+      - type: string
+        name: categories
+        label: Categories
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: string
+        name: keywords
+        label: Keywords
+      - type: boolean
+        name: essay
+        label: Essay
+  post:
+    type: page
+    label: Post
+    folder: source/_posts
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: img
+        label: Img
+      - type: boolean
+        name: toc
+        label: Toc
+      - type: boolean
+        name: top
+        label: Top
+      - type: boolean
+        name: mathjax
+        label: Mathjax
+      - type: string
+        name: categories
+        label: Categories
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: boolean
+        name: essay
+        label: Essay
+      - type: string
+        name: keywords
+        label: Keywords
+      - type: string
+        name: summary
+        label: Summary
+      - type: number
+        name: abbrlink
+        label: Abbrlink
+        subtype: int
+      - type: datetime
+        name: date
+        label: Date
+      - type: string
+        name: author
+        label: Author
+  source:
+    type: page
+    label: Source
+    folder: source
+    match:
+      - about/index.md
+      - av/index.md
+      - categories/index.md
+      - contact/index.md
+      - friends/index.md
+      - journal/index.md
+      - navigate/index.md
+      - rewardModal/index.md
+      - supervise/index.md
+      - tags/index.md
+      - time/index.md
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: string
+        name: type
+        label: Type
+      - type: string
+        name: layout
+        label: Layout
+  friends:
+    type: data
+    label: Friends
+    file: source/_data/friends.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: avatar
+          label: Avatar
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: introduction
+          label: Introduction
+        - type: string
+          name: url
+          label: Url
+        - type: string
+          name: title
+          label: Title
+  default:
+    type: data
+    label: Default
+    file: themes/islu/languages/default.yml
+    fields:
+      - type: string
+        name: posts
+        label: Posts
+      - type: string
+        name: category
+        label: Category
+      - type: string
+        name: categories
+        label: Categories
+      - type: string
+        name: tag
+        label: Tag
+      - type: string
+        name: tags
+        label: Tags
+      - type: string
+        name: archives
+        label: Archives
+      - type: string
+        name: about
+        label: About
+      - type: string
+        name: contact
+        label: Contact
+      - type: string
+        name: friends
+        label: Friends
+      - type: string
+        name: startRead
+        label: Start Read
+      - type: string
+        name: recommendedPosts
+        label: Recommended Posts
+      - type: string
+        name: publishDate
+        label: Publish Date
+      - type: string
+        name: updateDate
+        label: Update Date
+      - type: string
+        name: readCount
+        label: Read Count
+      - type: string
+        name: wordCount
+        label: Word Count
+      - type: string
+        name: readTimes
+        label: Read Times
+      - type: string
+        name: Minutes
+        label: Minutes
+      - type: string
+        name: readMore
+        label: Read More
+      - type: string
+        name: toc
+        label: Toc
+      - type: string
+        name: curr
+        label: Curr
+      - type: string
+        name: prev
+        label: Prev
+      - type: string
+        name: next
+        label: Next
+      - type: string
+        name: search
+        label: Search
+      - type: string
+        name: searchTip
+        label: Search Tip
+      - type: string
+        name: postTagTitle
+        label: Post Tag Title
+      - type: string
+        name: postCategoryTitle
+        label: Post Category Title
+      - type: string
+        name: categoryRadarTitle
+        label: Category Radar Title
+      - type: string
+        name: categoryNumber
+        label: Category Number
+      - type: string
+        name: categoryEmptyTip
+        label: Category Empty Tip
+      - type: string
+        name: postCharts
+        label: Post Charts
+      - type: string
+        name: postPublishChart
+        label: Post Publish Chart
+      - type: string
+        name: categoriesChart
+        label: Categories Chart
+      - type: string
+        name: top10TagsChart
+        label: Top 10 Tags Chart
+      - type: string
+        name: postsNumberName
+        label: Posts Number Name
+      - type: string
+        name: maximum
+        label: Maximum
+      - type: string
+        name: minimum
+        label: Minimum
+      - type: string
+        name: average
+        label: Average
+      - type: string
+        name: myProjects
+        label: My Projects
+      - type: string
+        name: mySkills
+        label: My Skills
+      - type: string
+        name: otherSkills
+        label: Other Skills
+      - type: string
+        name: gallery
+        label: Gallery
+      - type: string
+        name: notag
+        label: Notag
+      - type: string
+        name: from
+        label: From
+      - type: string
+        name: reprint
+        label: Reprint
+      - type: string
+        name: author
+        label: Author
+      - type: string
+        name: link
+        label: Link
+      - type: string
+        name: use
+        label: Use
+      - type: string
+        name: licensed
+        label: Licensed
+      - type: string
+        name: cc_by_url
+        label: Cc By Url
+      - type: string
+        name: cc_by_name
+        label: Cc By Name
+      - type: string
+        name: cc_by_nd_url
+        label: Cc By Nd Url
+      - type: string
+        name: cc_by_nd_name
+        label: Cc By Nd Name
+      - type: string
+        name: cc_by_sa_url
+        label: Cc By Sa Url
+      - type: string
+        name: cc_by_sa_name
+        label: Cc By Sa Name
+      - type: string
+        name: cc_by_nc_url
+        label: Cc By Nc Url
+      - type: string
+        name: cc_by_nc_name
+        label: Cc By Nc Name
+      - type: string
+        name: cc_by_nc_nd_url
+        label: Cc By Nc Nd Url
+      - type: string
+        name: cc_by_nc_nd_name
+        label: Cc By Nc Nd Name
+      - type: string
+        name: cc_by_nc_sa_url
+        label: Cc By Nc Sa Url
+      - type: string
+        name: cc_by_nc_sa_name
+        label: Cc By Nc Sa Name
+      - type: string
+        name: cc_0_url
+        label: Cc 0 Url
+      - type: string
+        name: toTheExtentPossibleUnderLaw
+        label: To The Extent Possible Under Law
+      - type: string
+        name: hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo
+        label: Has Waived All Copyright And Related Or Neighboring Rights To
+      - type: string
+        name: workPublishedFrom
+        label: Work Published From
+      - type: string
+        name: cc_0_country
+        label: Cc 0 Country
+      - type: string
+        name: cc_0_content
+        label: Cc 0 Content
+      - type: string
+        name: noreprint
+        label: Noreprint
+      - type: string
+        name: paycontact
+        label: Paycontact
+      - type: string
+        name: payreprint
+        label: Payreprint
+      - type: string
+        name: pleaseFollowReprintPolicy
+        label: Please Follow Reprint Policy
+      - type: string
+        name: checkPolicy
+        label: Check Policy
+  data_1:
+    type: data
+    label: Data 1
+    folder: ''
+    fields:
+      - type: string
+        name: posts
+        label: Posts
+      - type: string
+        name: category
+        label: Category
+      - type: string
+        name: categories
+        label: Categories
+      - type: string
+        name: tag
+        label: Tag
+      - type: string
+        name: tags
+        label: Tags
+      - type: string
+        name: archives
+        label: Archives
+      - type: string
+        name: about
+        label: About
+      - type: string
+        name: contact
+        label: Contact
+      - type: string
+        name: friends
+        label: Friends
+      - type: string
+        name: startRead
+        label: Start Read
+      - type: string
+        name: recommendedPosts
+        label: Recommended Posts
+      - type: string
+        name: publishDate
+        label: Publish Date
+      - type: string
+        name: updateDate
+        label: Update Date
+      - type: string
+        name: readCount
+        label: Read Count
+      - type: string
+        name: wordCount
+        label: Word Count
+      - type: string
+        name: readTimes
+        label: Read Times
+      - type: string
+        name: Minutes
+        label: Minutes
+      - type: string
+        name: readMore
+        label: Read More
+      - type: string
+        name: toc
+        label: Toc
+      - type: string
+        name: curr
+        label: Curr
+      - type: string
+        name: prev
+        label: Prev
+      - type: string
+        name: next
+        label: Next
+      - type: string
+        name: search
+        label: Search
+      - type: string
+        name: searchTip
+        label: Search Tip
+      - type: string
+        name: postTagTitle
+        label: Post Tag Title
+      - type: string
+        name: postCategoryTitle
+        label: Post Category Title
+      - type: string
+        name: categoryRadarTitle
+        label: Category Radar Title
+      - type: string
+        name: categoryNumber
+        label: Category Number
+      - type: string
+        name: categoryEmptyTip
+        label: Category Empty Tip
+      - type: string
+        name: postCharts
+        label: Post Charts
+      - type: string
+        name: postPublishChart
+        label: Post Publish Chart
+      - type: string
+        name: categoriesChart
+        label: Categories Chart
+      - type: string
+        name: top10TagsChart
+        label: Top 10 Tags Chart
+      - type: string
+        name: postsNumberName
+        label: Posts Number Name
+      - type: string
+        name: maximum
+        label: Maximum
+      - type: string
+        name: minimum
+        label: Minimum
+      - type: string
+        name: average
+        label: Average
+      - type: string
+        name: myProjects
+        label: My Projects
+      - type: string
+        name: mySkills
+        label: My Skills
+      - type: string
+        name: otherSkills
+        label: Other Skills
+      - type: string
+        name: gallery
+        label: Gallery
+      - type: string
+        name: notag
+        label: Notag
+      - type: string
+        name: from
+        label: From
+      - type: string
+        name: reprint
+        label: Reprint
+      - type: string
+        name: author
+        label: Author
+      - type: string
+        name: link
+        label: Link
+      - type: string
+        name: use
+        label: Use
+      - type: string
+        name: licensed
+        label: Licensed
+      - type: string
+        name: cc_by_url
+        label: Cc By Url
+      - type: string
+        name: cc_by_name
+        label: Cc By Name
+      - type: string
+        name: cc_by_nd_url
+        label: Cc By Nd Url
+      - type: string
+        name: cc_by_nd_name
+        label: Cc By Nd Name
+      - type: string
+        name: cc_by_sa_url
+        label: Cc By Sa Url
+      - type: string
+        name: cc_by_sa_name
+        label: Cc By Sa Name
+      - type: string
+        name: cc_by_nc_url
+        label: Cc By Nc Url
+      - type: string
+        name: cc_by_nc_name
+        label: Cc By Nc Name
+      - type: string
+        name: cc_by_nc_nd_url
+        label: Cc By Nc Nd Url
+      - type: string
+        name: cc_by_nc_nd_name
+        label: Cc By Nc Nd Name
+      - type: string
+        name: cc_by_nc_sa_url
+        label: Cc By Nc Sa Url
+      - type: string
+        name: cc_by_nc_sa_name
+        label: Cc By Nc Sa Name
+      - type: string
+        name: cc_0_url
+        label: Cc 0 Url
+      - type: string
+        name: toTheExtentPossibleUnderLaw
+        label: To The Extent Possible Under Law
+      - type: string
+        name: hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo
+        label: Has Waived All Copyright And Related Or Neighboring Rights To
+      - type: string
+        name: workPublishedFrom
+        label: Work Published From
+      - type: string
+        name: cc_0_country
+        label: Cc 0 Country
+      - type: string
+        name: cc_0_content
+        label: Cc 0 Content
+      - type: string
+        name: noreprint
+        label: Noreprint
+      - type: string
+        name: paycontact
+        label: Paycontact
+      - type: string
+        name: payreprint
+        label: Payreprint
+      - type: string
+        name: pleaseFollowReprintPolicy
+        label: Please Follow Reprint Policy
+      - type: string
+        name: checkPolicy
+        label: Check Policy
+  data_2:
+    type: data
+    label: Data 2
+    folder: ''
+    fields:
+      - type: string
+        name: posts
+        label: Posts
+      - type: string
+        name: category
+        label: Category
+      - type: string
+        name: categories
+        label: Categories
+      - type: string
+        name: tag
+        label: Tag
+      - type: string
+        name: tags
+        label: Tags
+      - type: string
+        name: archives
+        label: Archives
+      - type: string
+        name: about
+        label: About
+      - type: string
+        name: contact
+        label: Contact
+      - type: string
+        name: friends
+        label: Friends
+      - type: string
+        name: startRead
+        label: Start Read
+      - type: string
+        name: recommendedPosts
+        label: Recommended Posts
+      - type: string
+        name: publishDate
+        label: Publish Date
+      - type: string
+        name: updateDate
+        label: Update Date
+      - type: string
+        name: readCount
+        label: Read Count
+      - type: string
+        name: wordCount
+        label: Word Count
+      - type: string
+        name: readTimes
+        label: Read Times
+      - type: string
+        name: Minutes
+        label: Minutes
+      - type: string
+        name: readMore
+        label: Read More
+      - type: string
+        name: toc
+        label: Toc
+      - type: string
+        name: curr
+        label: Curr
+      - type: string
+        name: prev
+        label: Prev
+      - type: string
+        name: next
+        label: Next
+      - type: string
+        name: search
+        label: Search
+      - type: string
+        name: searchTip
+        label: Search Tip
+      - type: string
+        name: postTagTitle
+        label: Post Tag Title
+      - type: string
+        name: postCategoryTitle
+        label: Post Category Title
+      - type: string
+        name: categoryRadarTitle
+        label: Category Radar Title
+      - type: string
+        name: categoryNumber
+        label: Category Number
+      - type: string
+        name: categoryEmptyTip
+        label: Category Empty Tip
+      - type: string
+        name: postCharts
+        label: Post Charts
+      - type: string
+        name: postPublishChart
+        label: Post Publish Chart
+      - type: string
+        name: categoriesChart
+        label: Categories Chart
+      - type: string
+        name: top10TagsChart
+        label: Top 10 Tags Chart
+      - type: string
+        name: postsNumberName
+        label: Posts Number Name
+      - type: string
+        name: maximum
+        label: Maximum
+      - type: string
+        name: minimum
+        label: Minimum
+      - type: string
+        name: average
+        label: Average
+      - type: string
+        name: myProjects
+        label: My Projects
+      - type: string
+        name: mySkills
+        label: My Skills
+      - type: string
+        name: otherSkills
+        label: Other Skills
+      - type: string
+        name: gallery
+        label: Gallery
+      - type: string
+        name: notag
+        label: Notag
+      - type: string
+        name: from
+        label: From
+      - type: string
+        name: reprint
+        label: Reprint
+      - type: string
+        name: author
+        label: Author
+      - type: string
+        name: link
+        label: Link
+      - type: string
+        name: use
+        label: Use
+      - type: string
+        name: licensed
+        label: Licensed
+      - type: string
+        name: cc_by_url
+        label: Cc By Url
+      - type: string
+        name: cc_by_name
+        label: Cc By Name
+      - type: string
+        name: cc_by_nd_url
+        label: Cc By Nd Url
+      - type: string
+        name: cc_by_nd_name
+        label: Cc By Nd Name
+      - type: string
+        name: cc_by_sa_url
+        label: Cc By Sa Url
+      - type: string
+        name: cc_by_sa_name
+        label: Cc By Sa Name
+      - type: string
+        name: cc_by_nc_url
+        label: Cc By Nc Url
+      - type: string
+        name: cc_by_nc_name
+        label: Cc By Nc Name
+      - type: string
+        name: cc_by_nc_nd_url
+        label: Cc By Nc Nd Url
+      - type: string
+        name: cc_by_nc_nd_name
+        label: Cc By Nc Nd Name
+      - type: string
+        name: cc_by_nc_sa_url
+        label: Cc By Nc Sa Url
+      - type: string
+        name: cc_by_nc_sa_name
+        label: Cc By Nc Sa Name
+      - type: string
+        name: cc_0_url
+        label: Cc 0 Url
+      - type: string
+        name: toTheExtentPossibleUnderLaw
+        label: To The Extent Possible Under Law
+      - type: string
+        name: hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo
+        label: Has Waived All Copyright And Related Or Neighboring Rights To
+      - type: string
+        name: workPublishedFrom
+        label: Work Published From
+      - type: string
+        name: cc_0_country
+        label: Cc 0 Country
+      - type: string
+        name: cc_0_content
+        label: Cc 0 Content
+      - type: string
+        name: noreprint
+        label: Noreprint
+      - type: string
+        name: paycontact
+        label: Paycontact
+      - type: string
+        name: payreprint
+        label: Payreprint
+      - type: string
+        name: pleaseFollowReprintPolicy
+        label: Please Follow Reprint Policy
+      - type: string
+        name: checkPolicy
+        label: Check Policy
